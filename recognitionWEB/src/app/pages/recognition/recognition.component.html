@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Recognition</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-warning" (click)="logOut()">Cerrar Sesión</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container mt-5">
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <video #video width="640" height="480" autoplay muted playsinline></video>
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="this.personaDetectada.nombre !== undefined" class="card" style="width: 18rem;">
+        <img [src]="personaDetectada.url" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4>{{personaDetectada.nombre}}</h4>
+          <p class="card-text">{{personaDetectada.fecha}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div #imagenes *ngIf="labelPersonas.length > 0" class="row mb-3">
+    <h3 class="text-center">Personas Registradas</h3>
+    <div *ngFor="let item of labelPersonas; let i=index" class="card" style="width: 10rem;">
+      <img [src]="item.urlPhoto" class="card-img-top">
+    </div>
+  </div>
+</div>

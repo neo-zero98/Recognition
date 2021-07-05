@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formulario">
+  <ion-card>
+
+    <ion-card-content>
+      <div class="img-perfil">
+        <ion-avatar *ngIf="photo.webviewPath ==='' || photo.webviewPath === undefined || photo.webviewPath === null">
+          <img src="https://ecoevents.blob.core.windows.net/comprandoando/avatar.jpg">
+        </ion-avatar>
+        <ion-avatar (click)="viewPhoto()" *ngIf="photo.webviewPath !=='' && photo.webviewPath !== undefined && photo.webviewPath !== null">
+          <img [src]="photo.webviewPath">
+        </ion-avatar>
+        <div class="camara">
+          <a (click)="addPhotoToGallery()">
+            <ion-icon name="camera-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <ion-item>
+        <ion-label position="floating">Nombre*</ion-label>
+        <ion-input formControlName="nombre" type="text" required="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Celular*</ion-label>
+        <ion-input formControlName="celular" type="number" required="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input formControlName="correo" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input formControlName="edad" type="number"></ion-input>
+      </ion-item>
+      <ion-progress-bar *ngIf="btnLoader" color="success" type="indeterminate"></ion-progress-bar>
+      <ion-button [disabled]="this.formulario.invalid" color="success" expand="full" shape="round" (click)="enviarFormulario()">
+        Guardar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  </form>
+  <ion-fab *ngIf="btnFabButton" vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button color="success">
+      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="bottom">
+      <ion-fab-button (click)="goToWhatsapp()">
+        <ion-icon name="logo-whatsapp" size="large"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="goToCall()">
+        <ion-icon name="call-outline" size="large"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

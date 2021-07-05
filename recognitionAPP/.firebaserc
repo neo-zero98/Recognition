@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "recognition-47453": {
+      "hosting": {
+        "app": [
+          "recognition-47453"
+        ]
+      }
+    }
+  }
+}

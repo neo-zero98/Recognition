@@ -1,0 +1,18 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "recognitionAPP",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "GoogleAuth": {
+      "scopes": ["profile", "email"],
+      "serverClientId": "883548722410-mcibpu5jev49gj64mfust6aok13crnn2.apps.googleusercontent.com",
+      "forceCodeForRefreshToken" : true
+    },
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

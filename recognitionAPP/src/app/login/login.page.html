@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row class="ion-text-center">
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-avatar style="height: 110px;width: 110px;">
+          <img src="https://www.imat.org.mx/images/people/user-login.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input autofocus="true" [formControl]="email" type="email" required="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input (keyup.enter)="logIn()" [formControl]="password" type="password" required="true"></ion-input>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="logIn()" color="success" expand="block" shape="round">Aceptar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <a href="/login/registro">Registrarse</a>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-avatar style="height: 65px;width: 65px;" (click)="loginGoogle()">
+          <img src="../../assets/google.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

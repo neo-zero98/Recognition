@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="mx-auto card" style="width: 18rem;">
+      <div class="card-body">
+        <div class="text-center">
+          <img class="imagen mx-auto" src="https://www.imat.org.mx/images/people/user-login.png" alt="">
+        </div>
+        <div class="form-floating mb-3">
+          <input  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  [formControl]="email"
+                  required>
+          <label for="floatingInput">Correo</label>
+          <!-- <small
+            *ngIf="form.controls.email.touched && form.controls.email.invalid && form.invalid"
+            class="text-danger">Correo no valido</small> -->
+        </div>
+        <div class="form-floating">
+          <input (keyup.enter)="logIn()"
+                  type="password"
+                  class="form-control"
+                  id="floatingPassword"
+                  [formControl]="password"
+                  required>
+          <label for="floatingPassword">Contraseña</label>
+          <!-- <small
+            *ngIf="form.controls.password.touched && form.controls.password.invalid && form.invalid"
+            class="text-danger">Contraseña no valida</small> -->
+        </div>
+        <div class="d-grid gap-2 mt-3">
+          <button (click)="logIn()" type="button" class="btn btn-success">Iniciar Sesión</button>
+        </div>
+        <div class="text-center mt-3" (click)="loginGoogle()">
+          <img class="img-google mx-auto" src="../../../assets/google.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

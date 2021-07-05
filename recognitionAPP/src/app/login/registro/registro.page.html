@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input autofocus="true" formControlName="name" type="text" required="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input formControlName="email" type="email" required="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="pass1" type="password" required="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Repita su contraseña</ion-label>
+        <ion-input (keyup.enter)="submit()" formControlName="pass2" type="password" required="true"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-button (click)="submit()" color="success" expand="block" shape="round">Registrarse</ion-button>
+  </form>
+
+</ion-content>

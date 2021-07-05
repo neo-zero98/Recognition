@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button (click)="btnMenu=true" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Usuarios Registrados
+    </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="goToPerfil()">
+        <ion-icon name="add-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-progress-bar *ngIf="btnLoader" color="success" type="indeterminate"></ion-progress-bar>
+  <ion-card *ngIf="personas.length > 0">
+    <app-perfil-personas-registradas [lstPersonas]="personas" (sendPerson)="goToPerfil($event)"></app-perfil-personas-registradas>
+  </ion-card>
+</ion-content>
+
+<app-menu *ngIf="btnMenu" (evento)="saludoComponente($event)"></app-menu>
