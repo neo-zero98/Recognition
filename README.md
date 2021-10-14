@@ -18,10 +18,6 @@ Aplicación Web
   <figure style="margin-left:0">
     <img src="https://raw.githubusercontent.com/neo-zero98/Recognition/main/AppWeb.png" alt="alt text" width="100%"/>
   </figure>
-<div>
-<p style = 'text-align:center;'>
-<iframe width="60%" height = "50%"
-src="https://www.youtube.com/watch?v=OKFCSSbo5eM">
-</iframe>
-</div>
-</p>
+
+***
+Puede revisar el video de demostración de la aplicación. [Recognition](https://youtu.be/OKFCSSbo5eM)
